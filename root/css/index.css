@@ -1,0 +1,204 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	background: hsl(240, 73%, 65%);
+	background: -webkit-gradient(linear, left bottom, left top, from(hsl(240, 73%, 65%)), to(hsl(273, 75%, 66%)));
+	background: -o-linear-gradient(bottom, hsl(240, 73%, 65%) 0%, hsl(273, 75%, 66%) 100%);
+	background: linear-gradient(0deg, hsl(240, 73%, 65%) 0%, hsl(273, 75%, 66%) 100%);
+	font-size: 12px;
+	font-family: 'Kumbh Sans', sans-serif;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.wrap {
+	margin: 0 auto;
+    padding: 0 24px;
+	max-width: 1440px;
+}
+
+.faqCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 129px auto 164px;
+    background: hsl(0, 0%, 100%);
+	max-width: 920px;
+    -webkit-box-shadow: 0px 16px 65px -14px rgba(0,0,0,0.64);
+    box-shadow: 0px 16px 65px -14px rgba(0,0,0,0.64);
+    border-radius: 23px;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+}
+
+.faqCard .faqImg,
+.faqCard .faqBox {
+	width: 50%;
+}
+
+.faqImg {
+    position: relative;
+    background: url(../images/bg-pattern-desktop.svg) top 68% right 71px no-repeat,
+    url(../images/illustration-woman-online-desktop.svg) top 46.9% right 72px no-repeat;
+    background-size: auto;
+}
+
+.faqImg::before {
+    position: absolute;
+    top: 40%;
+    left: -93px;
+    width: 191px;
+    height: 184px;
+    background: url(../images/illustration-box-desktop.svg) center no-repeat;
+    content: '';
+}
+
+.faqBox {
+    margin: 67px 0 88px;
+    padding: 0 95px 0 16px;
+}
+
+.faqBox h1 {
+	margin-bottom: 43px;
+	font-size: 32px;
+    font-weight: 700;
+}
+
+.faqAccordion {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.faqAccordion h3 {
+    position: relative;
+    margin-top: 20.5px;
+    padding-bottom: 14px;
+    color: hsl(240, 6%, 50%);
+	font-size: 14.2px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.faqAccordion h3::after {
+    position: absolute;
+    top: 4px;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background: url(../images/icon-arrow-down.svg) center no-repeat;
+    content: '';
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+
+.faqAccordion.active h3 {
+    color: hsl(237, 12%, 33%);
+    font-weight: 700;
+}
+
+.faqAccordion.active h3::after {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.faqAccordion p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.faqAccordion .faqContent {
+    position: relative;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.faqAccordion.active .faqContent {
+	height: auto;
+}
+
+.spOnly {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .spOnly {
+        display: block;
+    }
+
+    .faqCard {
+        margin: 148px auto 86px;
+    }
+
+    .faqCard .faqImg,
+    .faqCard .faqBox {
+        width: 100%;
+    }
+
+    .faqImg::before {
+        display: none;
+    }
+
+    .faqImg {
+        background: none;
+    }
+
+    .faqImg img {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+    }
+
+    .faqImg .imgMain {
+        bottom: -72px;
+        width: 72.4%;
+    }
+
+    .faqBox {
+        margin: 135px 0 43px;
+        padding: 0 23px 0 25px;
+    }
+
+    .faqBox h1 {
+        margin-bottom: 36px;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .faqAccordion h3 {
+        margin-top: 20px;
+        padding-bottom: 13px;
+        font-size: 13.2px;
+    }
+
+    .faqAccordion {
+        padding-bottom: 5.7px;
+    }
+    
+    .faqAccordion h3::after {
+    right: 0;
+    }
+
+    .faqAccordion p {
+        margin-bottom: 9px;
+    }
+
+    .faqAccordion.active .faqContent {
+        padding-right: 15px;
+    }
+}
